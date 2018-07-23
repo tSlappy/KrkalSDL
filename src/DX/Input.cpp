@@ -41,7 +41,7 @@ CInput::~CInput()
 
 int CInput::Destroy()
 {
-	if(lpDI)
+/*	if(lpDI)
 	{
 		if(lpDIKeyDevice)
 		{
@@ -58,7 +58,7 @@ int CInput::Destroy()
 		}
 		lpDI->Release();
 		lpDI=NULL;
-	}
+	}*/
 	return 1;
 }
 
@@ -72,7 +72,7 @@ int CInput::Create( HWND hwnd )
 	
 	HRESULT hr;
  
-	hr = DirectInput8Create(GetModuleHandle(NULL), DIRECTINPUT_VERSION, IID_IDirectInput8, (void**)&lpDI, NULL);
+	/*hr = DirectInput8Create(GetModuleHandle(NULL), DIRECTINPUT_VERSION, IID_IDirectInput8, (void**)&lpDI, NULL);
 	if(FAILED(hr)) return 0;
 
 	hr = lpDI->CreateDevice(GUID_SysKeyboard,&lpDIKeyDevice,NULL);
@@ -108,7 +108,7 @@ int CInput::Create( HWND hwnd )
 
 	hr = lpDIMouseDevice->Acquire();
 	//if(FAILED(hr)) {Destroy();return 0;}
-
+	*/
 	return 1;
 }
 
@@ -116,7 +116,7 @@ int CInput::GetKeyState()
 {
 	HRESULT hr;
 
-	if(!lpDIKeyDevice) return 0;
+/*	if(!lpDIKeyDevice) return 0;
 
 	hr =lpDIKeyDevice->GetDeviceState(sizeof(keybuffer),(LPVOID)&keybuffer); 
 	if(FAILED(hr))
@@ -130,7 +130,7 @@ int CInput::GetKeyState()
 	}
 	if FAILED(hr) return 0;
 	
-
+*/
 	return 1;
 
 }
@@ -140,7 +140,7 @@ int CInput::GetMouseState(DIMOUSESTATE2 **mousestate)
 {
 	HRESULT hr;
 
-	if(!lpDIMouseDevice) return 0;
+/*	if(!lpDIMouseDevice) return 0;
 
 	hr =lpDIMouseDevice->GetDeviceState(sizeof(MouseState),(LPVOID)&MouseState); 
 	if(FAILED(hr))
@@ -156,13 +156,13 @@ int CInput::GetMouseState(DIMOUSESTATE2 **mousestate)
 	if FAILED(hr) return 0;
 
 	*mousestate = &MouseState;
-	
+	*/
 	return 1;
 }
 
 int CInput::IsKeyDown(CKerName *keyname)
 {
-	if(!keyname || keyname->Type != eKerNTkey ) {
+/*	if(!keyname || keyname->Type != eKerNTkey ) {
 		KerMain->Errors->LogError(eKRTEKeyNameExpected);
 		return 0;
 	}
@@ -221,7 +221,7 @@ int CInput::IsKeyDown(CKerName *keyname)
 			break;
 		}
 	}
-
+*/
 	return 1;
 }
 

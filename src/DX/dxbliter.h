@@ -25,12 +25,6 @@ class CCache;
 
 #define D3DFVF_BLTVERTEX (D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1)
 
-struct CBltVert{
-    FLOAT x, y, z, rhw;
-    DWORD col;
-    FLOAT u, v;
-};
-
 //////////////////////////////////////////////////////////////////////////////////////////////
 //
 // CClipRect - clipovaci obdelnik

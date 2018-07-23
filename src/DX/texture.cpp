@@ -16,7 +16,7 @@
 int CTexture::CreateFromFile(const char *filename, DWORD filter)
 {
 
-	D3DXIMAGE_INFO SrcInfo[3];
+/*	D3DXIMAGE_INFO SrcInfo[3];
 	
 	if(pTexture) {KRKAL->DeleteTextureLater(pTexture);pTexture=NULL;}
 
@@ -52,8 +52,8 @@ int CTexture::CreateFromFile(const char *filename, DWORD filter)
 	}else
 	{ pTexture=NULL;ok=0; }
 
-	delete[] buf;
-	return ok;
+	delete[] buf;*/
+	return 1; // ok;
 }
 
 int CTexture::Create(UINT sx, UINT sy, DWORD usage, D3DFORMAT fmt, D3DPOOL pool)
@@ -98,7 +98,7 @@ CTexture::~CTexture()
 
 int CTexture::Lock(void **data, int &pitch, DWORD flags, const RECT *rect)
 {
-	if(!pTexture||!data) return 0;
+/*	if(!pTexture||!data) return 0;
 
 	D3DLOCKED_RECT r;
 	
@@ -107,8 +107,8 @@ int CTexture::Lock(void **data, int &pitch, DWORD flags, const RECT *rect)
 		pitch=r.Pitch;
 		return 1; 
 	}
-	else return 0;
-
+	else return 0;*/
+	return 0;
 }
 
 int CTexture::Unlock()

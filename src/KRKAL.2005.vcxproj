@@ -154,7 +154,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/MACHINE:I386 /NODEFAULTLIB:libci.lib %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>d3d8.lib;d3dx8.lib;dinput8.lib;dxguid.lib;dsound.lib;zlib.lib;audiere.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>zlib.lib;audiere.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>../bin/KRKAL.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>zlib;MusicEng;DirecX\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -351,6 +351,7 @@
     <ClInclude Include="MainMenu\ProfileDesktop.h" />
     <ClInclude Include="TinyXml\tinystr.h" />
     <ClInclude Include="TinyXml\tinyxml.h" />
+    <ClInclude Include="wrapper.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Editor\EdHelp.cpp" />

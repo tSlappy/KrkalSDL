@@ -16,6 +16,8 @@
 #define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers
 #define _WIN32_WINNT 0x400
 
+#define KRKAL_SDL
+
 //#ifdef _DEBUG
 //	#include <afxwin.h>         // MFC core and standard components
 //	#include <afxext.h>         // MFC extensions
@@ -23,9 +25,7 @@
 	#include <windows.h>
 //#endif
 
-#include <d3d8.h>
-#include <d3dx8.h>
-#include <dinput.h>
+#include "wrapper.h"
 
 #include <new>
 

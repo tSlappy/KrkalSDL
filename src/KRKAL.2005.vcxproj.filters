@@ -58,6 +58,9 @@
     <Filter Include="LevelIntros">
       <UniqueIdentifier>{671453ca-eac5-4238-a991-23b44c301439}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source&amp;Header Files\Wrapper">
+      <UniqueIdentifier>{468a666d-857e-42c8-9837-e4800292d1d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\krkal.ico">
@@ -455,6 +458,9 @@
     </ClInclude>
     <ClInclude Include="Editor\EdHelp.h">
       <Filter>Source&amp;Header Files\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="wrapper.h">
+      <Filter>Source&amp;Header Files\Wrapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

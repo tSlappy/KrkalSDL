@@ -125,7 +125,7 @@ void CDXbliter::RestoreDeviceObjects()
 	d3dDevice->SetTransform(D3DTS_WORLD, &Identity);
 	d3dDevice->SetTransform(D3DTS_VIEW, &Identity);
 */
-	d3dDevice->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+	/*d3dDevice->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 
 	d3dDevice->SetRenderState(D3DRS_LIGHTING, FALSE);
 	d3dDevice->SetRenderState(D3DRS_CLIPPING, FALSE);
@@ -144,7 +144,7 @@ void CDXbliter::RestoreDeviceObjects()
 	
 	D3DDISPLAYMODE Mode;
 	d3dDevice->GetDisplayMode(&Mode);
-	format=Mode.Format;
+	format=Mode.Format;*/
 
 }
 
@@ -163,12 +163,12 @@ void CDXbliter::Render()
 
 	HRESULT hr;
 
-	d3dDevice->SetVertexShader(D3DFVF_BLTVERTEX);
+/*	d3dDevice->SetVertexShader(D3DFVF_BLTVERTEX);
 
 
 	hr=d3dDevice->GetBackBuffer(0,D3DBACKBUFFER_TYPE_MONO,&backbuffer);
 	if(hr!=D3D_OK) return;
-	
+	*/
 
 	//rootwnd->Update(NULL,NULL,0); 
 
@@ -189,11 +189,11 @@ int CDXbliter::CopyRectToScreen(LPDIRECT3DSURFACE8 surf,  RECT *sourcerect, POIN
 
 	if(!surf) return 0;
 
-	hr=d3dDevice->CopyRects(surf,sourcerect,1,backbuffer,destpoint);
+/*	hr=d3dDevice->CopyRects(surf,sourcerect,1,backbuffer,destpoint);
 
 	if(hr!=D3D_OK)
 		return 0;
-
+*/
 
 	return 1;
 }
@@ -210,12 +210,12 @@ int CDXbliter::CopyScreenToRect(LPDIRECT3DSURFACE8 surf, RECT *sourcerect, POINT
 		if(!*surf) return 0;
 	}
 */
-	hr=d3dDevice->CopyRects(backbuffer,sourcerect,1,surf,destpoint);
+/*	hr=d3dDevice->CopyRects(backbuffer,sourcerect,1,surf,destpoint);
 
 
 	if(hr!=D3D_OK)
 		return 0;
-	
+	*/
 	return 1;
 }
 

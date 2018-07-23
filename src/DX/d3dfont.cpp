@@ -231,7 +231,7 @@ HRESULT CD3DFont::RestoreDeviceObjects()
     HRESULT hr;
 
     // Create vertex buffer for the letters
-    if( FAILED( hr = m_pd3dDevice->CreateVertexBuffer( MAX_NUM_VERTICES*sizeof(FONT2DVERTEX),
+   /* if( FAILED( hr = m_pd3dDevice->CreateVertexBuffer( MAX_NUM_VERTICES*sizeof(FONT2DVERTEX),
                                                        D3DUSAGE_WRITEONLY | D3DUSAGE_DYNAMIC, 0,
                                                        D3DPOOL_DEFAULT, &m_pVB ) ) )
     {
@@ -278,7 +278,7 @@ HRESULT CD3DFont::RestoreDeviceObjects()
         else
             m_pd3dDevice->EndStateBlock( &m_dwDrawTextStateBlock );
     }
-
+	*/
     return S_OK;
 }
 
@@ -291,7 +291,7 @@ HRESULT CD3DFont::RestoreDeviceObjects()
 //-----------------------------------------------------------------------------
 HRESULT CD3DFont::InvalidateDeviceObjects()
 {
-    SAFE_RELEASE( m_pVB );
+  /*  SAFE_RELEASE( m_pVB );
 
     // Delete the state blocks
     if( m_pd3dDevice )
@@ -304,7 +304,7 @@ HRESULT CD3DFont::InvalidateDeviceObjects()
 
     m_dwSavedStateBlock    = 0L;
     m_dwDrawTextStateBlock = 0L;
-
+	*/
     return S_OK;
 }
 
@@ -386,7 +386,7 @@ HRESULT CD3DFont::DrawTextScaled( FLOAT x, FLOAT y, FLOAT z,
         return E_FAIL;
 
     // Set up renderstate
-    m_pd3dDevice->CaptureStateBlock( m_dwSavedStateBlock );
+  /*  m_pd3dDevice->CaptureStateBlock( m_dwSavedStateBlock );
     m_pd3dDevice->ApplyStateBlock( m_dwDrawTextStateBlock );
     m_pd3dDevice->SetVertexShader( D3DFVF_FONT2DVERTEX );
     m_pd3dDevice->SetStreamSource( 0, m_pVB, sizeof(FONT2DVERTEX) );
@@ -463,7 +463,7 @@ HRESULT CD3DFont::DrawTextScaled( FLOAT x, FLOAT y, FLOAT z,
 
     // Restore the modified renderstates
     m_pd3dDevice->ApplyStateBlock( m_dwSavedStateBlock );
-
+	*/
     return S_OK;
 }
 
@@ -481,7 +481,7 @@ HRESULT CD3DFont::DrawText( FLOAT sx, FLOAT sy, DWORD dwColor,
         return E_FAIL;
 
     // Setup renderstate
-    m_pd3dDevice->CaptureStateBlock( m_dwSavedStateBlock );
+  /*  m_pd3dDevice->CaptureStateBlock( m_dwSavedStateBlock );
     m_pd3dDevice->ApplyStateBlock( m_dwDrawTextStateBlock );
     m_pd3dDevice->SetVertexShader( D3DFVF_FONT2DVERTEX );
     m_pd3dDevice->SetStreamSource( 0, m_pVB, sizeof(FONT2DVERTEX) );
@@ -548,7 +548,7 @@ HRESULT CD3DFont::DrawText( FLOAT sx, FLOAT sy, DWORD dwColor,
 
     // Restore the modified renderstates
     m_pd3dDevice->ApplyStateBlock( m_dwSavedStateBlock );
-
+	*/
     return S_OK;
 }
 
@@ -565,7 +565,7 @@ HRESULT CD3DFont::Render3DText( TCHAR* strText, DWORD dwFlags )
         return E_FAIL;
 
     // Setup renderstate
-    m_pd3dDevice->CaptureStateBlock( m_dwSavedStateBlock );
+  /*  m_pd3dDevice->CaptureStateBlock( m_dwSavedStateBlock );
     m_pd3dDevice->ApplyStateBlock( m_dwDrawTextStateBlock );
     m_pd3dDevice->SetVertexShader( D3DFVF_FONT3DVERTEX );
     m_pd3dDevice->SetStreamSource( 0, m_pVB, sizeof(FONT3DVERTEX) );
@@ -648,7 +648,7 @@ HRESULT CD3DFont::Render3DText( TCHAR* strText, DWORD dwFlags )
 
     // Restore the modified renderstates
     m_pd3dDevice->ApplyStateBlock( m_dwSavedStateBlock );
-
+	*/
     return S_OK;
 }
 
